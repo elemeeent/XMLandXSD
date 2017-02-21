@@ -35,10 +35,15 @@ public class MainInterface extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // JComboBox
+
+        // JComboBox and default selected Index
+
         requestSelectBox.insertItemAt("Select From Items", 0);
         requestSelectBox.insertItemAt("Select From Persons", 1);
         requestSelectBox.insertItemAt("Select From Ships", 2);
+
+        requestSelectBox.setSelectedIndex(0);
+        s.append(SelectFromDb.selectFromItem((DataBaseConnector.getInstance().getNewConn())));
 
 
         requestSelectBox.addItemListener(new ItemListener() {
@@ -138,7 +143,6 @@ public class MainInterface extends JFrame {
                 } else {
                     JOptionPane.showMessageDialog(rootPanel, "Choose request");
                 }
-
             }
 
         });

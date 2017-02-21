@@ -7,6 +7,7 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class CheckXML {
@@ -14,22 +15,18 @@ public class CheckXML {
         try {
             SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             final FileInputStream fileInputStream = new FileInputStream(xmlFile);
-            try {
-                Schema schema = schemaFactory.newSchema(xsdFile);
-                Validator validator = schema.newValidator();
-                validator.validate(new StreamSource(fileInputStream));
-                return true;
-            } catch (SAXException e1) {
-                e1.printStackTrace();
-                return false;
-            } catch (IOException e1) {
-                e1.printStackTrace();
-                return false;
-            } finally {
-                fileInputStream.close();
-            }
-        } catch (IOException e1) {
-            e1.printStackTrace();
+            Schema schema = schemaFactory.newSchema(xsdFile);
+            Validator validator = schema.newValidator();
+            validator.validate(new StreamSource(fileInputStream));
+            return true;
+        } catch (FileNotFoundException e2) {
+            e2.printStackTrace();
+            return false;
+        } catch (IOException e2) {
+            e2.printStackTrace();
+            return false;
+        } catch (SAXException e2) {
+            e2.printStackTrace();
             return false;
         }
     }

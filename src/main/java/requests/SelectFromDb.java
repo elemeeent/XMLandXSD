@@ -2,7 +2,6 @@ package requests;
 
 import java.sql.*;
 
-
 public class SelectFromDb {
     public static StringBuilder selectFromItem(Connection con) {
         PreparedStatement preparedStatement;
