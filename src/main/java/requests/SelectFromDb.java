@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class SelectFromDb {
     public static StringBuilder selectFromItem(Connection con) {
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
         String itemTable = "Item";
         String sqlRequest = "SELECT * FROM " + itemTable;
         ResultSet rs = null;
@@ -41,11 +41,10 @@ public class SelectFromDb {
         }
 
         return itemsInfo;
-
     }
 
     public static StringBuilder selectFromOrderPerson(Connection con) {
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
         String orderPersonTable = "OrderPerson";
         String sqlRequest = "SELECT * FROM " + orderPersonTable;
         ResultSet rs = null;
@@ -73,7 +72,7 @@ public class SelectFromDb {
     }
 
     public static StringBuilder selectFromShipTo(Connection con) {
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
         String shipToTable = "ShipTo";
         String sqlRequest = "SELECT * FROM " + shipToTable;
         ResultSet rs = null;
