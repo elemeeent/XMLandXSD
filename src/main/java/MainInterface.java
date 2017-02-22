@@ -1,6 +1,8 @@
 import requests.InsertRequest;
 import requests.ParseXmlValues;
 import requests.SelectFromDb;
+import requests.XmlValues;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,8 +23,8 @@ public class MainInterface extends JFrame {
     private JTextArea valueFromDB;
     private JComboBox requestSelectBox;
 
-    private File xsdFile;
-    private File xmlFile;
+    private File xsdFile = new File("C:\\Users\\user\\Documents\\1.xsd");
+    private File xmlFile = new File ("C:\\Users\\user\\Documents\\2.xml");
 
     public MainInterface() {
         // stuff
@@ -121,11 +123,12 @@ public class MainInterface extends JFrame {
                         JOptionPane.showMessageDialog(rootPanel, "Please, choose XSD File");
                     } else {
                         try {
-                            ParseXmlValues.parseXmlFile(xmlFile);
+                            XmlValues xmlValues = new XmlValues();
+                            ParseXmlValues.parseXmlFile(xmlFile, xmlValues);
                             InsertRequest insertRequest = new InsertRequest(DataBaseConnector.getInstance().getNewConn());
-                            insertRequest.insertToShipToTable();
-                            insertRequest.insertToItemTable();
-                            insertRequest.insertToOrderPersonTable();
+                            insertRequest.insertToShipToTable(xmlValues);
+                            insertRequest.insertToItemTable(xmlValues);
+                            insertRequest.insertToOrderPersonTable(xmlValues);
 
 /*                            InsertRequest.insertToItemTable(DataBaseConnector.getInstance().getNewConn());
                             InsertRequest.insertToOrderPersonTable(DataBaseConnector.getInstance().getNewConn());

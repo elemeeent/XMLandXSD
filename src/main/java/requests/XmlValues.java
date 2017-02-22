@@ -47,39 +47,39 @@ public class XmlValues {
         return shipToCountryValue;
     }
 
-    public void setItemTitleValue(String textContent) {
-        this.itemTitleValue = textContent;
+    public void setItemTitleValue(String itemTitleValue) {
+        this.itemTitleValue = itemTitleValue;
     }
 
-    public void setItemNoteValue(String textContent) {
-        this.itemNoteValue = textContent;
+    public void setItemNoteValue(String itemNoteValue) {
+        this.itemNoteValue = itemNoteValue;
     }
 
-    public void setItemQuantityValue(String textContent) {
-        this.itemQuantityValue = textContent;
+    public void setItemQuantityValue(String itemQuantityValue) {
+        this.itemQuantityValue = itemQuantityValue;
     }
 
-    public void setItemPriceValue(String textContent) {
-        this.itemPriceValue = textContent;
+    public void setItemPriceValue(String itemPriceValue) {
+        this.itemPriceValue = itemPriceValue;
     }
 
-    public void setOrderPersonValue(String textContent) {
-        this.orderPersonValue = textContent;
+    public void setOrderPersonValue(String orderPersonValue) {
+        this.orderPersonValue = orderPersonValue;
     }
 
-    public void setShipToNameValue(String textContent) {
-        this.shipToNameValue = textContent;
+    public void setShipToNameValue(String shipToNameValue) {
+        this.shipToNameValue = shipToNameValue;
     }
 
-    public void setShipToAddressValue(String textContent) {
-        this.shipToAddressValue = textContent;
+    public void setShipToAddressValue(String shipToAddressValue) {
+        this.shipToAddressValue = shipToAddressValue;
     }
 
-    public void setShipToCityValue(String textContent) {
-        this.shipToCityValue = textContent;
+    public void setShipToCityValue(String shipToCityValue) {
+        this.shipToCityValue = shipToCityValue;
     }
 
-    public void setShipToCountryValue(String textContent) {
-        this.shipToCountryValue = textContent;
+    public void setShipToCountryValue(String shipToCountryValue) {
+        this.shipToCountryValue = shipToCountryValue;
     }
 }

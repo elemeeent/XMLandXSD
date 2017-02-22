@@ -10,13 +10,12 @@ import java.sql.Connection;
 
 public class InsertRequest {
     private Connection con;
-    private XmlValues xmlValues = new XmlValues();
 
     public InsertRequest(Connection connection) {
         this.con = connection;
     }
 
-    public void insertToItemTable() {
+    public void insertToItemTable(XmlValues xmlValues) {
         Statement statement = null;
         ItemTable itemTable = new ItemTable();
         String valueToItemTableRequest = "INSERT INTO "
@@ -29,7 +28,7 @@ public class InsertRequest {
                 + "("
                 + "'" + xmlValues.getItemTitleValue() + "', "
                 + "'" + xmlValues.getItemNoteValue() + "', "
-                + "'" +xmlValues.getItemQuantityValue() + "', "
+                + "'" + xmlValues.getItemQuantityValue() + "', "
                 + xmlValues.getItemPriceValue() + ")";
 
         try {
@@ -43,7 +42,7 @@ public class InsertRequest {
         }
     }
 
-    public void insertToOrderPersonTable() {
+    public void insertToOrderPersonTable(XmlValues xmlValues) {
         Statement statement = null;
         OrderPersonTable orderPersonTable = new OrderPersonTable();
         String valueToItemTableRequest = "INSERT INTO "
@@ -65,7 +64,7 @@ public class InsertRequest {
         }
     }
 
-    public void insertToShipToTable() {
+    public void insertToShipToTable(XmlValues xmlValues) {
         Statement statement = null;
         ShipToTable shipToTable = new ShipToTable();
         String valueToItemTableRequest = "INSERT INTO "

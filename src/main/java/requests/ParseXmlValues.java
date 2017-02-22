@@ -15,8 +15,7 @@ import org.w3c.dom.Document;
 public class ParseXmlValues {
 
 
-    public static void parseXmlFile(File xmlFile) {
-        XmlValues xmlValues = new XmlValues();
+    public static void parseXmlFile(File xmlFile, XmlValues xmlValues) {
         try {
             DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc = db.parse(xmlFile);
