@@ -3,8 +3,8 @@ package tables;
 
 public class OrderPersonTable {
 
-    private static String tableOrderPerson;
-    private static String orderPersonNameValue;
+    private String tableOrderPerson = "OrderPerson";
+    private String orderPersonNameValue = "PersonName";
 
 
     public String getTableOrderPerson() {

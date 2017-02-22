@@ -2,11 +2,11 @@ package tables;
 
 public class ShipToTable {
 
-    private static String tableShipTo;
-    private static String shipToNameValue;
-    private static String shipToAddressValue;
-    private static String shipToCityValue;
-    private static String shipToCountryValue;
+    private String tableShipTo = "ShipTo";
+    private String shipToNameValue = "ShipToName";
+    private String shipToAddressValue = "ShipToAddress";
+    private String shipToCityValue = "ShipToCity";
+    private String shipToCountryValue = "ShipToCountry";
 
     public String getTableShipTo() {
         return tableShipTo;

@@ -12,13 +12,13 @@ import java.io.IOException;
 
 public class CheckXML {
     public static boolean verifyXmlByXsd(File xmlFile, File xsdFile) {
-        try {
+        try (FileInputStream fileInputStream = new FileInputStream(xmlFile)) {
             SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            final FileInputStream fileInputStream = new FileInputStream(xmlFile);
             Schema schema = schemaFactory.newSchema(xsdFile);
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(fileInputStream));
             return true;
+
         } catch (FileNotFoundException e2) {
             e2.printStackTrace();
             return false;

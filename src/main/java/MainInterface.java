@@ -122,9 +122,14 @@ public class MainInterface extends JFrame {
                     } else {
                         try {
                             ParseXmlValues.parseXmlFile(xmlFile);
-                            InsertRequest.insertToItemTable(DataBaseConnector.getInstance().getNewConn());
+                            InsertRequest insertRequest = new InsertRequest(DataBaseConnector.getInstance().getNewConn());
+                            insertRequest.insertToShipToTable();
+                            insertRequest.insertToItemTable();
+                            insertRequest.insertToOrderPersonTable();
+
+/*                            InsertRequest.insertToItemTable(DataBaseConnector.getInstance().getNewConn());
                             InsertRequest.insertToOrderPersonTable(DataBaseConnector.getInstance().getNewConn());
-                            InsertRequest.insertToShipToTable(DataBaseConnector.getInstance().getNewConn());
+                            InsertRequest.insertToShipToTable(DataBaseConnector.getInstance().getNewConn());*/
                             JOptionPane.showMessageDialog(rootPanel, "Values added to Database");
                         } catch (Exception e1) {
                             e1.printStackTrace();

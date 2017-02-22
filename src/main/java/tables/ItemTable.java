@@ -2,11 +2,11 @@ package tables;
 
 public class ItemTable {
 
-    private static String tableItem;
-    private static String itemTitleValue;
-    private static String itemNoteValue;
-    private static String itemQuantityValue;
-    private static String itemPriceValue;
+    private String tableItem = "Item";
+    private String itemTitleValue = "ItemTitle";
+    private String itemNoteValue = "ItemNote";
+    private String itemQuantityValue = "ItemQuantity";
+    private String itemPriceValue = "ItemPrice";
 
 
     public String getItemTitleValue() {
@@ -28,8 +28,6 @@ public class ItemTable {
     public String getTableItem() {
         return tableItem;
     }
-
-
 
 
 }

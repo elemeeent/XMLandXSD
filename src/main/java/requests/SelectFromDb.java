@@ -99,7 +99,6 @@ public class SelectFromDb {
                         + "ShipToCity: \t \t" + shipToCity + "\n"
                         + "ShipToCountry: \t \t" + shipToCountry + "\n");
             }
-
             rs.close();
 
         } catch (SQLException e) {

@@ -9,9 +9,14 @@ import java.sql.Statement;
 import java.sql.Connection;
 
 public class InsertRequest {
+    private Connection con;
+    private XmlValues xmlValues = new XmlValues();
 
-    public static void insertToItemTable(Connection con) {
+    public InsertRequest(Connection connection) {
+        this.con = connection;
+    }
 
+    public void insertToItemTable() {
         Statement statement = null;
         ItemTable itemTable = new ItemTable();
         String valueToItemTableRequest = "INSERT INTO "
@@ -22,10 +27,10 @@ public class InsertRequest {
                 + itemTable.getItemPriceValue() + ") "
                 + "VALUES "
                 + "("
-                + "'" + ParseXmlValues.getItemTitleValue() + "', "
-                + "'" + ParseXmlValues.getItemNoteValue() + "', "
-                + "'" +ParseXmlValues.getItemQuantityValue() + "', "
-                + ParseXmlValues.getItemPriceValue() + ")";
+                + "'" + xmlValues.getItemTitleValue() + "', "
+                + "'" + xmlValues.getItemNoteValue() + "', "
+                + "'" +xmlValues.getItemQuantityValue() + "', "
+                + xmlValues.getItemPriceValue() + ")";
 
         try {
             System.out.println(valueToItemTableRequest);
@@ -38,8 +43,7 @@ public class InsertRequest {
         }
     }
 
-    public static void insertToOrderPersonTable(Connection con) {
-
+    public void insertToOrderPersonTable() {
         Statement statement = null;
         OrderPersonTable orderPersonTable = new OrderPersonTable();
         String valueToItemTableRequest = "INSERT INTO "
@@ -47,7 +51,7 @@ public class InsertRequest {
                 + orderPersonTable.getOrderPersonNameValue() + ") "
                 + "VALUES "
                 + "("
-                + "'" + ParseXmlValues.getOrderPersonValue() + "'"
+                + "'" + xmlValues.getOrderPersonValue() + "'"
                 + ")";
 
         try {
@@ -61,8 +65,7 @@ public class InsertRequest {
         }
     }
 
-    public static void insertToShipToTable(Connection con) {
-
+    public void insertToShipToTable() {
         Statement statement = null;
         ShipToTable shipToTable = new ShipToTable();
         String valueToItemTableRequest = "INSERT INTO "
@@ -73,10 +76,10 @@ public class InsertRequest {
                 + shipToTable.getShipToCountryValue() + ") "
                 + "VALUES "
                 + "("
-                + "'" + ParseXmlValues.getShipToNameValue() + "', "
-                + "'" + ParseXmlValues.getShipToAddressValue() + "', "
-                + "'" + ParseXmlValues.getShipToCityValue() + "', "
-                + "'" + ParseXmlValues.getShipToCountryValue() + "'"
+                + "'" + xmlValues.getShipToNameValue() + "', "
+                + "'" + xmlValues.getShipToAddressValue() + "', "
+                + "'" + xmlValues.getShipToCityValue() + "', "
+                + "'" + xmlValues.getShipToCountryValue() + "'"
                 + ")";
 
         try {
